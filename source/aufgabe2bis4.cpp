@@ -5,6 +5,7 @@
 #include <iterator>	//std::ostream_iterator<>
 #include <algorithm> //std::reserve, std::generate
 #include <set>
+#include <map>
 
 
 int main () {
@@ -20,32 +21,33 @@ int main () {
 	std::copy(std::begin(l0), std::end(l0), std::begin(v0));
 
 	std::set<unsigned int> set0;
-	set0.insert(std::begin(l0), std::end(l0));
 
-	/*for (std::set<unsigned int>::iterator it = set0.begin(); it != set0.end(); ++it) {	//GERADE ZAHLEN
-		for (unsigned int counter = 0; counter<= *it; counter++){
-		if (*it != counter){
-			set1.insert(counter);
-			counter ++;
-		}else{
-			counter ++; 
-		}
+
+	std::map<unsigned int, unsigned int> map0;
+
+	for(std::list<unsigned int>::iterator it = l0.begin();
+		it != l0.end(); ++it){
+		auto a = set0.insert(*it);
+		if(a.second){
+			map0[*it] = 1;
+		} else {
+			map0[*it] += 1;
 		}
 	}
-*/
+
+
 	std::set<unsigned int> set1;
 	for(unsigned int i=0; i<101; i++)
 		set1.insert(i);
 
-	for (std::set<unsigned int>::iterator it = set0.begin();
+	for(std::set<unsigned int>::iterator it = set0.begin();
 		it != set0.end(); ++it)
 		set1.erase(*it);
 
 
-
 	//Ausgaben
 
-	std::copy(std::begin(l0), std::end(l0),
+	/*std::copy(std::begin(l0), std::end(l0),
 	std::ostream_iterator<unsigned int>(std::cout, "\n"));
 
 	std::copy(std::begin(v0), std::end(v0),
@@ -60,6 +62,11 @@ int main () {
 
 	std::copy(std::begin(set1), std::end(set1),
 	std::ostream_iterator<unsigned int>(std::cout, "\n"));
+*/
+
+	for(std::set<unsigned int>::iterator it = set0.begin(); //3.4 Häufigkeit
+		it != set0.end(); ++it)
+		std::cout << *it << " : "<< map0[*it] << std::endl;
 
 	return 0;
 }
