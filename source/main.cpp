@@ -9,7 +9,7 @@ int main ()
 {
 	std::vector<int> v0(10); //container (vector) v0 = int länge 10, container (list) l0,l1 = int,
 
-	for (std::vector<int>::iterator it = v0.begin(); //v0 mit zufallszahlen
+	for (std::vector<int>::iterator it = v0.begin(); //v0 mit zufallszahlen //iterator (pointer)
 		it != v0.end(); ++it) {
 		*it = std::rand();
 	}
