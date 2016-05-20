@@ -6,6 +6,7 @@
 #include <set>
 #include <list>
 #include "circle.hpp"
+#include "templates.hpp"
 
 	bool is_odd(int i){
 		return (i % 2) != 0;
@@ -106,6 +107,13 @@ TEST_CASE("describe_add_lambda", "[add_lambda]"){
 		return a == 10;
 	}));
 
+}
+
+TEST_CASE("describe_filter", "[filter]"){
+	std::vector<int> v1{1,2,3,4,5,6};
+	std::vector<int> alleven= filter(v1, is_even);
+
+	REQUIRE(std::all_of(alleven.begin(), alleven.end(), is_even));
 
 
 }

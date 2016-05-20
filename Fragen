@@ -15,3 +15,14 @@ assoziativ: Farbname oder RGB-Werte als Schlüssel zum "wiederfinden", map --> k
 
 3. Warteschlange
 sequentiell: deque, entfernen und löschen vorne und hinten möglich
+
+
+3.12
+
+map -> kann maximal 1x den selben input speichern, sonst überspeichert (key darf nicht doppelt) BESSER: Multimap, und vor und Nachname getrennt, für leichtere Suche
+
+find matrikelnummer[Name] --> matrikelnummer ausgabe
+insert, try_emplace (wenn existiert dann nicht ändern)
+
+
+
