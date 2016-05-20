@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 #include <set>
+#include <list>
 #include "circle.hpp"
 
 	bool is_odd(int i){
@@ -16,7 +17,7 @@
 
 
 
-TEST_CASE("describe_factorial", "[aufgbae3]")
+TEST_CASE("describe_sort", "[sort]")
 {
 	//ihre Loesung :
 
@@ -57,15 +58,37 @@ TEST_CASE("describe_swap", "[aufgabe3.8]"){
 
 	Circle c1(6.0f, 0.0f, 0.0f);
 	Circle c2(5.0f, 0.0f, 0.0f);
-
+	int a = 0;
+	int b = 1;
 
 	swap(c1, c2);
+	swap(a, b);
 
 	REQUIRE(c1.get_r()==5.0f);
 	REQUIRE(c2.get_r()==6.0f);
 
+	REQUIRE(a == 1);
+	REQUIRE(b == 0);
+
+}
 
 
+TEST_CASE("describe_sort2", "[sort2]"){
+
+	std::list<Circle> list0(5);
+	for (int i = 0; i < 5; ++i) {
+
+		float rad = std::rand() % 10;
+		Circle c(rad, 0.0f, 0.0f);
+		list0.push_back(c);
+	}
+
+	list0.sort([](Circle a, Circle b) {
+		return a.get_r() < b.get_r();
+	});
+
+
+	REQUIRE(std::is_sorted(list0.begin(), list0.end()));
 }
 
 
