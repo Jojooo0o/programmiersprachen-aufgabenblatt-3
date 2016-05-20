@@ -1,0 +1,17 @@
+
+3.6
+
+Sequentieller Container: Vector, List, jedem Element wird ein bestimmter Wert / Position zugefügt (einfache Sortierungen Möglich)
+same typ
+
+Assoziativer Container: Map, jedes Element bekommt einen einzigartigen Schlüssel mit beliebigem Datentyp, abfrage hier nicht
+nach Reihenfolge sondern nach abgleich der Schlüssel. (erschwerte suche, da schlüssel nicht "wirklich" sortiert)
+
+1. Speichern der Punkte eines Polygons
+sequentiell: selber datentyp und einfach durchnummeriert, zugriff auf punkte über stelle im vector (xter punkt) vector
+
+2.  Zuordnung von Farbnamen und ensprechenden RGB-Werten
+assoziativ: Farbname oder RGB-Werte als Schlüssel zum "wiederfinden", map --> key, value
+
+3. Warteschlange
+sequentiell: deque, entfernen und löschen vorne und hinten möglich
