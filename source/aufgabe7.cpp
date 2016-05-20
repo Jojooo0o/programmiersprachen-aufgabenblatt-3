@@ -47,11 +47,28 @@ REQUIRE(std::is_sorted(set1.begin(), set1.end()));
 }
 
 template<typename T>
-T swap(T& a, T& b) {
+void swap(T& a, T& b) {
 	T c(a);
 	a = b;
 	b = c;
 }
+
+TEST_CASE("describe_swap", "[aufgabe3.8]"){
+
+	Circle c1(6.0f, 0.0f, 0.0f);
+	Circle c2(5.0f, 0.0f, 0.0f);
+
+
+	swap(c1, c2);
+
+	REQUIRE(c1.get_r()==5.0f);
+	REQUIRE(c2.get_r()==6.0f);
+
+
+
+}
+
+
 
 
 int main (int argc, char* argv[])
