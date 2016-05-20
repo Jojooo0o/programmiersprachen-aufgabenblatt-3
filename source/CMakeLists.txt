@@ -9,3 +9,8 @@ aufgabe2bis4.cpp)
 # Build aufgabe5
 add_executable(aufgabe5 
 aufgabe5.cpp)
+
+# Build aufgabe7
+add_executable(aufgabe7
+circle.cpp 
+aufgabe7.cpp)
